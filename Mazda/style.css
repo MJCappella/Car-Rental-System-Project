@@ -1,0 +1,229 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    line-height: 1.5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.card-wrapper{
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* left card section starts here */
+img{
+    width: 100%;
+    display: block;
+    border-radius: 5%;
+}
+.img-display{
+    overflow: hidden;
+}
+.img-showcase{
+    display: flex;
+    width: 100%;
+    transition: all 0.5s ease;
+}
+.img-showcase img{
+    min-width: 100%;
+}
+.img-select{
+    display: flex;
+}
+.img-item{
+    margin: 0.3rem;
+}
+.img-item:nth-child(1),
+.img-item:nth-child(2),
+.img-item:nth-child(3){
+    margin-right: 0;
+}
+.img-item:hover{
+    opacity: 0.8;
+}
+/* left card section ends here */
+
+
+/* right card section starts here */
+.product-content{
+    padding: 2rem 1rem;
+    border: 1px solid #b8bdb9;
+    border-radius: 5%;
+
+}
+.product-title{
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    font-weight: 700;
+    position: relative;
+    color: #12263a;
+    margin: 1rem 0;
+}
+.product-title::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 80px;
+    background: #12263a;
+}
+
+.product-price{
+    display: flex;
+    position: relative;
+    margin: 10px 0;
+    align-items: center;
+}
+
+.product-price .offer-price{
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.pick-details input{
+    padding: .5rem .5rem .5rem .5rem;
+    margin: 1rem 1rem 1rem 1rem;
+    border-radius: 5%;
+  }
+
+.product-details{
+    margin: 10px 0;
+}
+.product-details h3{
+    font-size: 18px;
+    font-weight: 500;
+}
+
+
+.product-btn{
+    display: flex;
+    gap: 15px;
+}
+
+.product-btn .book-now{
+    background-color: #f86429;
+    color: #fff;
+    border: 1px solid #f86429;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.product-btn .book-now i{
+    font-size: 20px;
+}
+.product-btn .book-now:hover{
+    box-shadow: 0 3px 6px #949494;
+}
+
+.product-btn .contact-us{
+    
+    background-color: #efefef;
+    color: var(--grey);
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: 500;
+}
+.product-btn .contact-us i{
+    font-size: 20px;
+}
+.product-btn .contact-us:hover{
+    box-shadow: 0 3px 6px #949494;
+    background: #484848;
+    color: #fff;
+}
+
+/* right card section ends here */
+
+
+
+/* car description section starts here */
+.about-car{
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+  .about-car h5{
+    font-size: 2rem;
+    text-align: center;
+  }
+.product-detail{
+  margin-top: 2rem;
+}
+.product-detail ul{
+    margin: 1rem 0;
+    font-size: 0.9rem;
+}
+.product-detail h1{
+    font-size: 1.3rem;
+    text-decoration: underline;
+    text-align: center;
+}
+.product-detail ul li{
+    margin: 0;
+    list-style: none;
+    background: url(imgs/checked.png) left center no-repeat;
+    background-size: 18px;
+    padding:0  3rem 0;
+    margin: 0.4rem 0;
+    font-weight: 600;
+    opacity: 0.9;
+    display: inline-block;
+    }
+.product-detail ul li span{
+    font-weight: 400;
+}
+/* car description section ends here */
+
+
+/* responsiveness */
+@media screen and (min-width: 992px){
+    .card{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1.5rem;
+    }
+    .card-wrapper{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .product-imgs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    .product-content{
+        padding-top: 0;
+    }
+}
+
+@media screen and (max-width: 1115px){
+    .about-car{
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+  }
+
+
+
+
