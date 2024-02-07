@@ -1,2 +1,1 @@
-# Car-Rental-System-Project
-A car rental system for a school project we are working on, for the partial fulfilment for a Bachelor's Degree in Computer Science.
+A teamwork project submitted to the Board of Undergraduate Studies in partial fulfillment for the requirements of the Bachelor of Science Degree in Computer Science of Egerton University.
