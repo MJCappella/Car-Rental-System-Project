@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Rental</title>
+</head>
+<body>
+    <h1>Edit Rental</h1>
+    <form action="/admin/edit_rental/{{ rental.rental_id }}" method="post">
+        <label for="customer_id">Customer ID:</label><br>
+        <input type="number" id="customer_id" name="customer_id" value="{{ rental.customer_id }}"><br>
+        <label for="car_id">Car ID:</label><br>
+        <input type="number" id="car_id" name="car_id" value="{{ rental.car_id }}"><br>
+        <label for="start_date">Start Date:</label><br>
+        <input type="date" id="start_date" name="start_date" value="{{ rental.start_date }}"><br>
+        <label for="end_date">End Date:</label><br>
+        <input type="date" id="end_date" name="end_date" value="{{ rental.end_date }}"><br>
+        <label for="total_cost">Total Cost:</label

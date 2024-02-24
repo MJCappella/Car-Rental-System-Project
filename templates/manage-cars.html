@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Cars</title>
+</head>
+<body>
+    <h1>Manage Cars</h1>
+    <ul>
+        {% for car in cars %}
+        <li>{{ car.make }} {{ car.model }} - {{ car.year }} - {{ car.color }} - {{ car.license_plate }} - Rental Rate: ${{ car.rental_rate_per_day }}/day - {% if car.available %}Available{% else %}Not Available{% endif %} - <a href="/admin/edit_car/{{ car.car_id }}">Edit</a> | <form action="/admin/delete_car/{{ car.car_id }}" method="post"><input type="submit" value="Delete"></form></li>
+        {% endfor %}
+    </ul>
+    <a href="/admin/add_car">Add New Car</a>
+</body>
+</html>

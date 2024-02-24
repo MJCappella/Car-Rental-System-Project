@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Car</title>
+</head>
+<body>
+    <h1>Edit Car</h1>
+    <form action="/admin/edit_car/{{ car.car_id }}" method="post">
+        <label for="make">Make:</label><br>
+        <input type="text" id="make" name="make" value="{{ car.make }}"><br>
+        <label for="model">Model:</label><br>
+        <input type="text" id="model" name="model" value="{{ car.model }}"><br>
+        <label for="year">Year:</label><br>
+        <input type="number" id="year" name="year" value="{{ car.year }}"><br>
+        <label for="color">Color:</label><br>
+        <input type="text" id="color" name="color" value="{{ car.color }}"><br>
+        <label for="license_plate">License Plate:</label><br>
+        <input type="text" id="license_plate" name="license_plate" value="{{ car.license_plate }}"><br>
+        <label for="rental_rate_per_day">Rental Rate per Day:</label><br>
+        <input type="number" id="rental_rate_per_day" name="rental_rate_per_day" value="{{ car.rental_rate_per_day }}"><br>
+        <label for="available">Available:</label><br>
+        <input type="checkbox" id="available" name="available" {% if car.available %}checked{% endif %}><br><br>
+        <input type="submit" value="Save Changes">
+    </form>
+</body>
+</html>
