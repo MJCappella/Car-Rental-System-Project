@@ -66,6 +66,53 @@ def dashboard():
     # Add logic for the dashboard route
     return render_template('index.html')
 
+@app.route('/contactUs')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/aboutUs')
+def aboutus():
+    return render_template('about.html')
+
+@app.route('/Toyota')
+def toyotapage():
+    return render_template('toyota/toyota.html')
+
+@app.route('/Toyota/<toyota_brand>')
+def toyotabrands(toyota_brand):
+    return render_template(f'toyota/{toyota_brand}')
+
+@app.route('/Mazda')
+def mazdapage():
+    return render_template('mazda/mazda.html')
+
+@app.route('/Mazda/<mazda_brand>')
+def mazdabrands(mazda_brand):
+    return render_template(f'mazda/{mazda_brand}')
+
+@app.route('/Mercedes')
+def mercedespage():
+    return render_template('mercedes/mercedes.html')
+
+@app.route('/Mercedes/<mercedes_brand>')
+def mercedesbrands(mercedes_brand):
+    return render_template(f'mercedes/{mercedes_brand}')
+
+@app.route('/Nissan')
+def nissanpage():
+    return render_template('nissan/nissan.html')
+
+@app.route('/Nissan/<nissan_brand>')
+def nissanbrands(nissan_brand):
+    return render_template(f'nissan/{nissan_brand}')
+
+@app.route('/Honda')
+def hondapage():
+    return render_template('honda/honda.html')
+
+@app.route('/Honda/<honda_brand>')
+def hondabrands(honda_brand):
+    return render_template(f'honda/{honda_brand}')
 
 if __name__ == '__main__':
     # When running this script directly, create the database tables
