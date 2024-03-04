@@ -1,4 +1,4 @@
-name: Greetings there
+name: Greetings User
 
 on: [pull_request_target, issues]
 
