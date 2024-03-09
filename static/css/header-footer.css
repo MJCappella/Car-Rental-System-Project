@@ -102,7 +102,7 @@ header {
     background: #fff;
     border: 2px solid #858484;
     transform: translate(-50%, -70%);
-    border-radius: 10px;
+    border-radius: 10;
 }
 
 .show-popup .form-popup {

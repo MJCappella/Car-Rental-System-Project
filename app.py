@@ -12,7 +12,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(50), nullable=False)
     last_name = db.Column(db.String(50), nullable=False)
-    username = db.Column(db.String(50), unique=True, nullable=False)
+    email = db.Column(db.String(50), unique=True, nullable=False)
     password_hash = db.Column(db.String(), nullable=False)
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -20,7 +20,7 @@ def register():
     if request.method == 'POST':
         first_name = request.form['first_name']
         last_name = request.form['last_name']
-        username= request.form['username']
+        email= request.form['email']
         password = request.form['password']
         confirm_password = request.form['confirm_password']
 
@@ -30,7 +30,7 @@ def register():
             # Hash the password before storing it in the database
             # password_hash = generate_password_hash(password, method='pbkdf2:sha256')
 
-            new_user = User(first_name=first_name, last_name=last_name, username=username, password_hash=password) #replace password with password_hash
+            new_user = User(first_name=first_name, last_name=last_name, email=email, password_hash=password) #replace password with password_hash
 
             # Add the new user to the database
             db.session.add(new_user)
@@ -45,10 +45,10 @@ def register():
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
-        username = request.form['username']
+        email = request.form['email']
         password = request.form['password']
 
-        user = User.query.filter_by(username=username).first()
+        user = User.query.filter_by(email=email).first()
 
         if user :
         #and check_password_hash(user.password_hash, password): #replace password with password_hash
@@ -57,7 +57,7 @@ def login():
             return render_template('index.html')
         else:
             # Login failed
-            flash('Login failed. Please check your username and password.', 'danger')
+            flash('Login failed. Please check your email and password.', 'danger')
 
     return render_template('login.html')
 
