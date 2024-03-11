@@ -18,11 +18,11 @@ class User(db.Model):
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
-        first_name = request.form['first_name']
-        last_name = request.form['last_name']
+        first_name = request.form['firstname']
+        last_name = request.form['lastname']
         email= request.form['email']
         password = request.form['password']
-        confirm_password = request.form['confirm_password']
+        confirm_password = request.form['password2']
 
         if password != confirm_password:
             flash('Password and Confirm Password do not match. Please try again.', 'danger')
@@ -65,6 +65,10 @@ def login():
 def dashboard():
     # Add logic for the dashboard route
     return render_template('index.html')
+
+@app.route('/admin')
+def dashboard():
+    return render_template('admin/login.html')
 
 @app.route('/contactUs')
 def contact():

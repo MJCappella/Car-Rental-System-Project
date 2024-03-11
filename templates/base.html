@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}CarHire || Homepage{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}">
+    {% block carstyle %}{% endblock %}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap"
     rel="stylesheet">
@@ -43,7 +44,7 @@
             <h2>LOGIN</h2>
             <form action="/login" method="post">
                 <div class="input-field">
-                    <input type="text" required>
+                    <input type="text" required autofocus>
                     <label>Email</label>
                 </div>
                 <div class="input-field">
@@ -63,40 +64,40 @@
 
     <div class="form-box signup">
     
-                <form id="form" action="/register" method="post">
-                <h1>REGISTER</h1>
-                <div class="input-control">
-                    <label for="username">First Name</label>
-                    <input id="firstname" name="firstname" type="text">
-                    <div class="error"></div>
-                </div>
-                <div class="input-control">
-                    <label for="lastname">Last Name</label>
-                    <input id="lastname" name="lastname" type="text">
-                    <div class="error"></div>
-                </div>
-                <div class="input-control">
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="text">
-                    <div class="error"></div>
-                </div>
-                <div class="input-control">
-                    <label for="password">Password</label>
-                    <input id="password"name="password" type="password">
-                    <div class="error"></div>
-                </div>
-                <div class="input-control">
-                    <label for="password2">Confirm Password</label>
-                    <input id="password2"name="password2" type="password">
-                    <div class="error"></div>
-                </div>
-                <button type="submit">Sign Up</button>
-
-                <div class="bottom-link">
-                Already have an account? 
-                <a href="#" id="login-link">Login</a>
+        <form id="form" action="/register" method="post">
+            <h1>REGISTER</h1>
+            <div class="input-control">
+                <label for="firstnamename">First Name</label>
+                <input id="firstname" name="firstname" type="text" required autofocus>
+                <div class="error"></div>
             </div>
-            </form>
+            <div class="input-control">
+                <label for="lastname">Last Name</label>
+                <input id="lastname" name="lastname" type="text" required>
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="text" required>
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="password">Password</label>
+                <input id="password"name="password" type="password" required>
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="password2">Confirm Password</label>
+                <input id="password2"name="password2" type="password" required>
+                <div class="error"></div>
+            </div>
+            <button type="submit">Sign Up</button>
+
+            <div class="bottom-link">
+            Already have an account? 
+            <a href="#" id="login-link">Login</a>
+             </div>
+        </form>
 
         
     </div>

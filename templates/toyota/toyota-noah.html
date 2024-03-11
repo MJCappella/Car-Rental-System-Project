@@ -1,107 +1,9 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toyota Noah</title>
-    <link rel="stylesheet" href="../header-footer.css">
-    <link rel="stylesheet" href="../car-page.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap"
-    rel="stylesheet">
- </head>
-<body>
+{% extends "base.html" %}
 
-   <!-- header section starts here -->
-   <header>
+{% block title %}Toyota Noah{% endblock %}
+{% block carstyle %}<link rel="stylesheet" href="{{ url_for('static', filename='css/car-page.css') }}">{% endblock %}
 
-    <nav class="navbar">
-        <span class="hamburger-btn"><i class="fa fa-bars"></i></span>
-        <a href="#" class="logo">
-            <img src="imgs/Hire icon.png" alt="logo">
-            <h2>CarHire</h2>
-        </a>
-        <ul class="links">
-            <span class="close-btn"><i class="fa fa-times"></i></span>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../about.html">About us</a></li>
-            <li><a href="../contact.html">Contact us</a></li>
-        </ul>
-
-        <button class="login-btn">Login/Signup</button>
-    </nav>
-</header>
-
-
-<div class="bg-overlay"></div>
-<div class="form-popup">
-    <span class="close-btn"><i class="fa fa-times"></i></span>
-
-
-    <div class="form-box login">
-       
-        <div class="form-content">
-            <h2>LOGIN</h2>
-            <form action="#">
-                <div class="input-field">
-                    <input type="text" required>
-                    <label>Email</label>
-                </div>
-                <div class="input-field">
-                    <input type="password" required>
-                    <label>Password</label>
-                </div>
-                <a href="#" class="forgot-pass-link">Forgot password?</a>
-                <button type="submit">Log In</button>
-            </form>
-            <div class="bottom-link">
-                Don't have an account?
-                <a href="#" id="signup-link">Signup</a>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="form-box signup">
-     
-                  <form id="form" action="#">
-                <h1>REGISTER</h1>
-                <div class="input-control">
-                    <label for="username">Username</label>
-                    <input id="username" name="username" type="text">
-                    <div class="error"></div>
-                </div>
-                <div class="input-control">
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="text">
-                    <div class="error"></div>
-                </div>
-                <div class="input-control">
-                    <label for="password">Password</label>
-                    <input id="password"name="password" type="password">
-                    <div class="error"></div>
-                </div>
-                <div class="input-control">
-                    <label for="password2">Confirm Password</label>
-                    <input id="password2"name="password2" type="password">
-                    <div class="error"></div>
-                </div>
-                <button type="submit">Sign Up</button>
-
-                <div class="bottom-link">
-                  Already have an account? 
-                  <a href="#" id="login-link">Login</a>
-              </div>
-            </form>
-
-          
-      </div>
-    </div>
-    </div>
-</form>
-<!-- header section ends here -->
-
-
-
+{% block content %}
 
 <!-- intro section starts here -->
 <section class = "about-section">
@@ -111,10 +13,6 @@
   </div>
 <!-- intro section ends here -->
 
-
-
-
-
     <div class = "card-wrapper">
         <div class = "card">
 
@@ -122,31 +20,31 @@
           <div class = "product-imgs">
             <div class = "img-display">
               <div class = "img-showcase">
-                <img src = "imgs/Noah1.jpg" alt = "car image">
-                <img src = "imgs/Noah2.jpg" alt = "car image">
-                <img src = "imgs/Noah3.jpg" alt = "car image">
-                <img src = "imgs/Noah4.jpg" alt = "car image">
+                <img src = "{{ url_for('static', filename='images/toyota/Noah1.jpg') }}" alt = "car image">
+                <img src = "{{ url_for('static', filename='images/toyota/Noah2.jpg') }}" alt = "car image">
+                <img src = "{{ url_for('static', filename='images/toyota/Noah3.jpg') }}" alt = "car image">
+                <img src = "{{ url_for('static', filename='images/toyota/Noah4.jpg') }}" alt = "car image">
               </div>
             </div>
             <div class = "img-select">
               <div class = "img-item">
                 <a href = "#" data-id = "1">
-                  <img src = "imgs/Noah1.jpg" alt = "car image">
+                  <img src = "{{ url_for('static', filename='images/toyota/Noah1.jpg') }}" alt = "car image">
                 </a>
               </div>
               <div class = "img-item">
                 <a href = "#" data-id = "2">
-                  <img src = "imgs/Noah2.jpg" alt = "car image">
+                  <img src = "{{ url_for('static', filename='images/toyota/Noah2.jpg') }}" alt = "car image">
                 </a>
               </div>
               <div class = "img-item">
                 <a href = "#" data-id = "3">
-                  <img src = "imgs/Noah3.jpg" alt = "car image">
+                  <img src = "{{ url_for('static', filename='images/toyota/Noah3.jpg') }}" alt = "car image">
                 </a>
               </div>
               <div class = "img-item">
                 <a href = "#" data-id = "4">
-                  <img src = "imgs/Noah4.jpg" alt="car image">
+                  <img src = "{{ url_for('static', filename='images/toyota/Noah4.jpg') }}" alt="car image">
                 </a>
               </div>
             </div>
@@ -222,52 +120,6 @@
 </section>
 <!-- car description section ends here -->
 
+<script src="{{ url_for('static', filename='js/image-slider.js') }}"></script>
 
-
-     
-<!-- footer section starts here -->
-<footer>
-  <div class="content">
-    <div class="left box">
-      <div class="upper">
-        <div class="topic">About us</div>
-        <p>We deal with car hire services. Get the chance to choose your perfect ride 
-          from our wide variety of car brands and models</p>
-      </div>
-      <div class="lower">
-        <div class="topic">Contact us</div>
-        <div class="phone">
-          <a href="#"><i class="fas fa-phone-volume"></i>+254 1234 5678</a>
-        </div>
-        <div class="email">
-          <a href="#"><i class="fas fa-envelope"></i>info@carhire.com</a>
-        </div>
-      </div>
-    </div>
-    <div class="middle box">
-      <div class="topic">Quick Links</div>
-      <div><a href="../index.html">Home</a></div>
-      <div><a href="../about.html">About Us</a></div>
-      <div><a href="../contact.html">Contact Us</a></div>
-    </div>
-    <div class="right box">
-      <div class="topic">Subscribe To Our Newsletter</div>
-      <form action="#">
-        <input type="text" placeholder="Enter email address">
-        <input type="submit" name="" value="Send">
-        
-      </form>
-    </div>
-  </div>
-  <div class="bottom">
-    <p>Copyright © 2024 <a href="#">Car Hire</a> All rights reserved</p>
-  </div>
-</footer>
-<!-- footer section ends here -->
-
-
-<script src="../navbar.js"></script>
-<script src="../image-slider.js"></script>
-
-</body>
-</html>
+{% endblock %}
