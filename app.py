@@ -67,8 +67,34 @@ def dashboard():
     return render_template('index.html')
 
 @app.route('/admin')
-def dashboard():
+def admin_login():
     return render_template('admin/login.html')
+
+@app.route('/adminlogin', methods=['GET', 'POST'])
+def admin_configs():
+    if request.method == "post":
+        uname = request.form['admin_uname']
+        passwd = request.form['adminpasswd']
+        
+        if uname == 'admin' and passwd == 'adminpass':
+            flash("Login successful!")
+            return render_template('admin/admin-view.html')
+        else:
+            return render_template('admin/login.html')
+        
+    return render_template('/admin/admin-view.html') 
+        
+@app.route('/admin/dashboard')
+def admin_dashboard():
+    # Connect to the database and fetch system statistics
+    cur.execute("SELECT COUNT(*) FROM customer")
+    total_customers = cur.fetchone()[0]
+    cur.execute("SELECT COUNT(*) FROM car")
+    total_cars = cur.fetchone()[0]
+    cur.execute("SELECT COUNT(*) FROM rental")
+    total_rentals = cur.fetchone()[0]
+    conn.close()
+    return render_template('admin/admin-view.html', total_customers=total_customers, total_cars=total_cars, total_rentals=total_rentals)
 
 @app.route('/contactUs')
 def contact():

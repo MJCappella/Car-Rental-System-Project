@@ -6,7 +6,7 @@ import mysql.connector
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'mysupersecretkey'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:mjay0001@localhost/carrental'
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db = SQLAlchemy(app)
 
 conn = mysql.connector.connect(
