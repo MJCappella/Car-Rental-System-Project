@@ -44,11 +44,11 @@
             <h2>LOGIN</h2>
             <form action="/login" method="post">
                 <div class="input-field">
-                    <input type="text" required autofocus>
+                    <input type="text" name="email" required autofocus>
                     <label>Email</label>
                 </div>
                 <div class="input-field">
-                    <input type="password" required>
+                    <input type="password" name="password" required>
                     <label>Password</label>
                 </div>
                 <a href="/forgotpass" class="forgot-pass-link">Forgot password?</a>
@@ -140,9 +140,8 @@
     <div class="right box">
         <div class="topic">Subscribe To Our Newsletter</div>
         <form action="#">
-        <input type="text" placeholder="Enter email address">
-        <input type="submit" name="" value="Send">
-        
+            <input type="text" placeholder="Enter email address">
+            <input type="submit" name="" value="Send">
         </form>
     </div>
     </div>

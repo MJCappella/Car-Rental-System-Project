@@ -1,107 +1,8 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nissan Collection</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap"
-    rel="stylesheet">
- </head>
-<body>
+{% extends "base.html" %}
 
-  
+{% block title %}Nissan Collection{% endblock %}
 
-     <!-- header section starts here -->
-  <header>
-
-    <nav class="navbar">
-        <span class="hamburger-btn"><i class="fa fa-bars"></i></span>
-        <a href="#" class="logo">
-            <img src="{{ url_for('static', filename='images/Hire icon.png') }}" alt="logo">
-            <h2>CarHire</h2>
-        </a>
-        <ul class="links">
-            <span class="close-btn"><i class="fa fa-times"></i></span>
-            <li><a href="../index.html">Home</a></li>
-            <li><a href="../about.html">About us</a></li>
-            <li><a href="../contact.html">Contact us</a></li>
-        </ul>
-
-        <button class="login-btn">Login/Signup</button>
-    </nav>
-</header>
-
-
-<div class="bg-overlay"></div>
-<div class="form-popup">
-    <span class="close-btn"><i class="fa fa-times"></i></span>
-
-
-    <div class="form-box login">
-       
-        <div class="form-content">
-            <h2>LOGIN</h2>
-            <form action="#">
-                <div class="input-field">
-                    <input type="text" required>
-                    <label>Email</label>
-                </div>
-                <div class="input-field">
-                    <input type="password" required>
-                    <label>Password</label>
-                </div>
-                <a href="#" class="forgot-pass-link">Forgot password?</a>
-                <button type="submit">Log In</button>
-            </form>
-            <div class="bottom-link">
-                Don't have an account?
-                <a href="#" id="signup-link">Signup</a>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="form-box signup">
-     
-                  <form id="form" action="#">
-                <h1>REGISTER</h1>
-                <div class="input-control">
-                    <label for="username">Username</label>
-                    <input id="username" name="username" type="text">
-                    <div class="error"></div>
-                </div>
-                <div class="input-control">
-                    <label for="email">Email</label>
-                    <input id="email" name="email" type="text">
-                    <div class="error"></div>
-                </div>
-                <div class="input-control">
-                    <label for="password">Password</label>
-                    <input id="password"name="password" type="password">
-                    <div class="error"></div>
-                </div>
-                <div class="input-control">
-                    <label for="password2">Confirm Password</label>
-                    <input id="password2"name="password2" type="password">
-                    <div class="error"></div>
-                </div>
-                <button type="submit">Sign Up</button>
-
-                <div class="bottom-link">
-                  Already have an account? 
-                  <a href="#" id="login-link">Login</a>
-              </div>
-            </form>
-
-          
-      </div>
-    </div>
-    </div>
-</form>
-<!-- header section ends here -->
-
-
+{% block content %}
 
 <!-- intro section starts here -->
 <section class = "about-section">
@@ -121,182 +22,182 @@
     <div class="product-container">
 
         <div class="pro">
-            <a href="nissan-dualis.html" target="_blank"><img class="producto" src="imgs/dualis1.avif"></a>
+            <a href="/Nissan/nissan-dualis.html" target="_blank"><img class="producto" src="{{ url_for('static', filename='images/nissan/dualis1.avif') }}"></a>
             <div class="description">
                 <span>SUV</span>
                 <h5>NISSAN DUALIS</h5>
                 <div class="star">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
                 </div>
                 <h4>Ksh.20,000/day</h4>
             </div>
-            <div class="hire-icon-container"><a href="nissan-dualis.html" target="_blank"><img class="hire-icon" src="imgs/Hire icon.png"></a></div>
+            <div class="hire-icon-container"><a href="/Nissan/nissan-dualis.html" target="_blank"><img class="hire-icon" src="{{ url_for('static', filename='images/Hire icon.png') }}"></a></div>
         </div>
 
 
         <div class="pro">
-            <a href="nissan-kicks.html" target="_blank"><img class="producto" src="imgs/kicks1.jpg"></a>
+            <a href="/Nissan/nissan-kicks.html" target="_blank"><img class="producto" src="{{ url_for('static', filename='images/nissan/kicks1.jpg') }}"></a>
             <div class="description">
                 <span>SUV</span>
                 <h5>NISSAN KICKS</h5>
                 <div class="star">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
                 </div>
                 <h4>Ksh.25,000/day</h4>
             </div>
-            <div class="hire-icon-container"><a href="nissan-kicks.html" target="_blank"><img class="hire-icon" src="imgs/Hire icon.png"></a></div>
+            <div class="hire-icon-container"><a href="/Nissan/nissan-kicks.html" target="_blank"><img class="hire-icon" src="{{ url_for('static', filename='images/Hire icon.png') }}"></a></div>
         </div>
 
 
         <div class="pro">
-            <a href="nissan-march.html" target="_blank"><img class="producto" src="imgs/march1.png"></a>
+            <a href="/Nissan/nissan-march.html" target="_blank"><img class="producto" src="{{ url_for('static', filename='images/nissan/march1.png') }}"></a>
             <div class="description">
                 <span>SUV</span>
                 <h5>NISSAN MARCH</h5>
                 <div class="star">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
                 </div>
                 <h4>Ksh.25,000/day</h4>
             </div>
-            <div class="hire-icon-container"><a href="nissan-march.html" target="_blank"><img class="hire-icon" src="imgs/Hire icon.png"></a></div>
+            <div class="hire-icon-container"><a href="/Nissan/nissan-march.html" target="_blank"><img class="hire-icon" src="{{ url_for('static', filename='images/Hire icon.png') }}"></a></div>
         </div>
 
 
         <div class="pro">
-            <a href="nissan-note.html" target="_blank"><img class="producto" src="imgs/note1.png"></a>
+            <a href="/Nissan/nissan-note.html" target="_blank"><img class="producto" src="{{ url_for('static', filename='images/nissan/note1.png') }}"></a>
             <div class="description">
                 <span>Sedan</span>
                 <h5>NISSAN NOTE</h5>
                 <div class="star">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
                 </div>
                 <h4>Ksh.7,000/day</h4>
             </div>
-            <div class="hire-icon-container"><a href="nissan-note.html" target="_blank"><img class="hire-icon" src="imgs/Hire icon.png"></a></div>
+            <div class="hire-icon-container"><a href="/Nissan/nissan-note.html" target="_blank"><img class="hire-icon" src="{{ url_for('static', filename='images/Hire icon.png') }}"></a></div>
         </div>
 
 
         <div class="pro">
-            <a href="nissan-nv150.html" target="_blank"><img class="producto" src="imgs/addx1.jpg"></a>
+            <a href="/Nissan/nissan-nv150.html" target="_blank"><img class="producto" src="{{ url_for('static', filename='images/nissan/addx1.jpg') }}"></a>
             <div class="description">
                 <span>Sedan</span>
                 <h5>NISSAN NV150 AD DX</h5>
                 <div class="star">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
                 </div>
                 <h4>Ksh.10,000/day</h4>
             </div>
-            <div class="hire-icon-container"><a href="nissan-nv150.html" target="_blank"><img class="hire-icon" src="imgs/Hire icon.png"></a></div>
+            <div class="hire-icon-container"><a href="/Nissan/nissan-nv150.html" target="_blank"><img class="hire-icon" src="{{ url_for('static', filename='images/Hire icon.png') }}"></a></div>
         </div>
 
 
         <div class="pro">
-            <a href="nissan-nv200.html" target="_blank"><img class="producto" src="imgs/vanette1.jpg"></a>
+            <a href="/Nissan/nissan-nv200.html" target="_blank"><img class="producto" src="{{ url_for('static', filename='images/nissan/vanette1.jpg') }}"></a>
             <div class="description">
                 <span>Crossover</span>
                 <h5>NISSAN NV200 VANETTE DX</h5>
                 <div class="star">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
                 </div>
                 <h4>Ksh10,000/day</h4>
             </div>
-            <div class="hire-icon-container"><a href="nissan-nv200.html" target="_blank"><img class="hire-icon" src="imgs/Hire icon.png"></a></div>
+            <div class="hire-icon-container"><a href="/Nissan/nissan-nv200.html" target="_blank"><img class="hire-icon" src="{{ url_for('static', filename='images/Hire icon.png') }}"></a></div>
         </div>
 
 
         <div class="pro">
-            <a href="nissan-tiida.html" target="_blank"><img class="producto" src="imgs/tiida1.png"></a>
+            <a href="/Nissan/nissan-tiida.html" target="_blank"><img class="producto" src="{{ url_for('static', filename='images/nissan/tiida1.png') }}""imgs/tiida1.png"></a>
             <div class="description">
                 <span>Sedan</span>
                 <h5>NISSAN TIIDA</h5>
                 <div class="star">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
                 </div>
                 <h4>Ksh.15,000/day</h4>
             </div>
-            <div class="hire-icon-container"><a href="nissan-tiida.html" target="_blank"><img class="hire-icon" src="imgs/Hire icon.png"></a></div>
+            <div class="hire-icon-container"><a href="/Nissan/nissan-tiida.html" target="_blank"><img class="hire-icon" src="{{ url_for('static', filename='images/Hire icon.png') }}"></a></div>
         </div>
 
 
         <div class="pro">
-            <a href="nissan-xtrail.html" target="_blank"><img class="producto" src="imgs/xtrail1.png"></a>
+            <a href="/Nissan/nissan-xtrail.html" target="_blank"><img class="producto" src="{{ url_for('static', filename='images/nissan/xtrail1.png') }}"></a>
             <div class="description">
                 <span>SUV</span>
                 <h5>NISSAN XTRAIL</h5>
                 <div class="star">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
                 </div>
                 <h4>Ksh.30,000/day</h4>
             </div>
-            <div class="hire-icon-container"><a href="nissan-xtrail.html" target="_blank"><img class="hire-icon" src="imgs/Hire icon.png"></a></div>
+            <div class="hire-icon-container"><a href="/Nissan/nissan-xtrail.html" target="_blank"><img class="hire-icon" src="{{ url_for('static', filename='images/Hire icon.png') }}"></a></div>
         </div>
 
 
         <div class="pro">
-            <a href="nissan-serena.html" target="_blank"><img class="producto" src="imgs/serena1.png"></a>
+            <a href="/Nissan/nissan-serena.html" target="_blank"><img class="producto" src="{{ url_for('static', filename='images/nissan/serena1.png') }}"></a>
             <div class="description">
                 <span>Minivan</span>
                 <h5>NISSAN SERENA</h5>
                 <div class="star">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
                 </div>
                 <h4>Ksh.7,000/day</h4>
             </div>
-            <div class="hire-icon-container"><a href="nissan-serena.html" target="_blank"><img class="hire-icon" src="imgs/Hire icon.png"></a></div>
+            <div class="hire-icon-container"><a href="/Ninssan/nissan-serena.html" target="_blank"><img class="hire-icon" src="{{ url_for('static', filename='images/Hire icon.png') }}"></a></div>
         </div>
 
 
         <div class="pro">
-            <a href="nissan-juke.html" target="_blank"><img class="producto" src="imgs/juke1.avif"></a>
+            <a href="/Nissan/nissan-juke.html" target="_blank"><img class="producto" src="{{ url_for('static', filename='images/nissan/juke1.avif') }}"></a>
             <div class="description">
                 <span>SUV</span>
                 <h5>NISSAN JUKE</h5>
                 <div class="star">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
-                    <img class="star-icon" src="imgs/star.png">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}">
                 </div>
                 <h4>Ksh.10,000/day</h4>
             </div>
-            <div class="hire-icon-container"><a href="nissan-juke.html" target="_blank"><img class="hire-icon" src="imgs/Hire icon.png"></a></div>
+            <div class="hire-icon-container"><a href="/Nissan/nissan-juke.html" target="_blank"><img class="hire-icon" src="{{ url_for('static', filename='images/Hire icon.png') }}"></a></div>
         </div>
 
 
@@ -307,52 +208,12 @@
 
 <!-- vehicles section ends here -->
 
-
-
+{% endblock %}
        
-<!-- footer section starts here -->
-<footer>
-    <div class="content">
-      <div class="left box">
-        <div class="upper">
-          <div class="topic">About us</div>
-          <p>We deal with car hire services. Get the chance to choose your perfect ride 
-            from our wide variety of car brands and models</p>
-        </div>
-        <div class="lower">
-          <div class="topic">Contact us</div>
-          <div class="phone">
-            <a href="#"><i class="fas fa-phone-volume"></i>+254 1234 5678</a>
-          </div>
-          <div class="email">
-            <a href="#"><i class="fas fa-envelope"></i>info@carhire.com</a>
-          </div>
-        </div>
-      </div>
-      <div class="middle box">
-        <div class="topic">Quick Links</div>
-        <div><a href="../index.html">Home</a></div>
-        <div><a href="../about.html">About Us</a></div>
-        <div><a href="../contact.html">Contact Us</a></div>
-      </div>
-      <div class="right box">
-        <div class="topic">Subscribe To Our Newsletter</div>
-        <form action="#">
-          <input type="text" placeholder="Enter email address">
-          <input type="submit" name="" value="Send">
-          
-        </form>
-      </div>
-    </div>
-    <div class="bottom">
-      <p>Copyright © 2024 <a href="#">Car Hire</a> All rights reserved</p>
-    </div>
-  </footer>
-  <!-- footer section ends here -->
 
+{% block inlinestyles %}
 
-
-    <style>
+<style>
 
 * {
   margin: 0;
@@ -484,8 +345,4 @@ body {
 
 </style>
 
-
-<script src="../navbar.js"></script>
-
-</body>
-</html>
+{% endblock %}

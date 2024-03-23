@@ -57,7 +57,7 @@ def login():
         email = request.form['email']
         password = request.form['password']
 
-        user = User.query.filter_by(email=email).first()
+        user = User.query.filter_by(email=email)
 
         if user :
         #and check_password_hash(user.password_hash, password): #replace password with password_hash

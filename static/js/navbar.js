@@ -25,7 +25,6 @@ hidePopupBtn.addEventListener("click", () => showPopupBtn.click());
 // Show or hide signup form
 signupLoginLink.forEach(link => {
     link.addEventListener("click", (e) => {
-        e.preventDefault();
         formPopup.classList[link.id === 'signup-link' ? 'add' : 'remove']("show-signup");
     });
 });
@@ -38,8 +37,6 @@ const password = document.getElementById('password');
 const password2 = document.getElementById('password2');
 
 form.addEventListener('submit', e => {
-    e.preventDefault();
-
     validateInputs();
 });
 
