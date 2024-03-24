@@ -27,9 +27,28 @@
             <li><a href="/aboutUs">About us</a></li>
             <li><a href="/contactUs">Contact us</a></li>
         </ul>
+        
+            {% if 'email' in session %}
+                <p>Welcome, <strong>{{ session['email'] }}</strong></p>
+                <a href="/logout">
+                    <button class="logout-btn" href="/logout">Logout</button>
+                </a>
+            {% else %}
+                <button class="login-btn">Login/Signup</button>
+            {% endif %}
 
-        <button class="login-btn">Login/Signup</button>
+        
     </nav>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-message flash-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
 </header>
 
 

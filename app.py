@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for, flash
+from flask import Flask, render_template, request, redirect, url_for, flash, session
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
 
@@ -37,9 +37,9 @@ def register():
             db.session.commit()
 
             flash('Registration successful. You can now log in.', 'success')
-            return redirect(url_for('login'))
+            return redirect(url_for('dashboard'))
 
-    return render_template('register.html')
+    return render_template('index.html')
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -54,12 +54,18 @@ def login():
         #and check_password_hash(user.password_hash, password): #replace password with password_hash
             # Login successful
             flash('Login successful', 'success')
+            session['email'] = email
             return render_template('index.html')
         else:
             # Login failed
             flash('Login failed. Please check your email and password.', 'danger')
 
-    return render_template('login.html')
+    return render_template('index.html')
+
+@app.route('/logout')
+def logout():
+    session.pop('email', None)  # Remove username from session
+    return redirect(url_for('dashboard'))
 
 @app.route('/')
 def dashboard():
