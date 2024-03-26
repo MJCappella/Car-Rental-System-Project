@@ -110,6 +110,10 @@ def contact():
 def aboutus():
     return render_template('about.html')
 
+@app.route('/booking')
+def booking():
+    return render_template('booking.html')
+
 @app.route('/Toyota')
 def toyotapage():
     return render_template('toyota/toyota.html')
