@@ -141,7 +141,7 @@ img{
     gap: 15px;
 }
 
-.product-btn .book-now{
+.product-btn .book-now a{
     background-color: #f86429;
     color: #fff;
     border: 1px solid #f86429;
@@ -159,7 +159,6 @@ img{
 
 .product-btn .book-now i{
     font-size: 20px;
-    text-decoration: none;
 }
 .product-btn .book-now:hover{
     box-shadow: 0 3px 6px #949494;

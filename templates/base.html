@@ -43,6 +43,7 @@
             {% if messages %}
                 {% for category, message in messages %}
                     <div class="flash-message flash-{{ category }}">
+                        <span class="close-btn"><i class="fa fa-times"></i></span>
                         {{ message }}
                     </div>
                 {% endfor %}
@@ -56,14 +57,13 @@
 <div class="form-popup">
     <span class="close-btn"><i class="fa fa-times"></i></span>
 
-
     <div class="form-box login">
     
         <div class="form-content">
             <h2>LOGIN</h2>
             <form action="/login" method="post">
                 <div class="input-field">
-                    <input type="text" name="email" required autofocus>
+                    <input type="email" name="email" required autofocus>
                     <label>Email</label>
                 </div>
                 <div class="input-field">
@@ -97,7 +97,7 @@
             </div>
             <div class="input-control">
                 <label for="email">Email</label>
-                <input id="email" name="email" type="text" required>
+                <input id="email" name="email" type="email" required>
                 <div class="error"></div>
             </div>
             <div class="input-control">
@@ -146,7 +146,7 @@
             <a href="#"><i class="fas fa-phone-volume"></i>+254 1234 5678</a>
         </div>
         <div class="email">
-            <a href="#"><i class="fas fa-envelope"></i>info@carhire.com</a>
+            <a href="mailto:info@carhire.com"><i class="fas fa-envelope"></i>info@carhire.com</a>
         </div>
         </div>
     </div>
@@ -165,7 +165,7 @@
     </div>
     </div>
     <div class="bottom">
-    <p>Copyright © 2024 <a href="#">Car Hire</a> All rights reserved</p>
+    <p>Copyright © 2024 <a href="/aboutUs">Car Hire</a> All rights reserved</p>
     </div>
 </footer>
 <!-- footer section ends here -->

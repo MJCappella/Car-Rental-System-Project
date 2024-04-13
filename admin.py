@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 import psycopg2  # assuming PostgreSQL is used as the database
-
+import mysql.connector
 app = Flask(__name__)
 
 # Database connection parameters

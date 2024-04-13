@@ -14,6 +14,11 @@ class User(db.Model):
     last_name = db.Column(db.String(50), nullable=False)
     email = db.Column(db.String(50), unique=True, nullable=False)
     password_hash = db.Column(db.String(), nullable=False)
+    
+    
+# TODO
+# Create models for rental and car tables
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -25,8 +30,10 @@ def register():
         confirm_password = request.form['password2']
 
         if password != confirm_password:
-            flash('Password and Confirm Password do not match. Please try again.', 'danger')
+            flash('Password and Confirm Password do not match. Please try again.', 'error')
         else:
+            # TODO
+            # Validate login details and hash before storage
             # Hash the password before storing it in the database
             # password_hash = generate_password_hash(password, method='pbkdf2:sha256')
 
@@ -51,6 +58,8 @@ def login():
         user = User.query.filter_by(email=email)
 
         if user :
+            
+            # TODO validate details and dehash
         #and check_password_hash(user.password_hash, password): #replace password with password_hash
             # Login successful
             flash('Login successful', 'success')
@@ -64,13 +73,19 @@ def login():
 
 @app.route('/logout')
 def logout():
-    session.pop('email', None)  # Remove username from session
+    session.pop('email', None) 
+    flash('You have logged out successfully', 'success')
     return redirect(url_for('dashboard'))
 
 @app.route('/')
+@app.route('/index')
 def dashboard():
     # Add logic for the dashboard route
     return render_template('index.html')
+
+@app.errorhandler(404)
+def bar(error):
+    return render_template('error.html'), 404
 
 @app.route('/admin')
 def admin_login():
@@ -82,18 +97,17 @@ def admin_configs():
         uname = request.form['admin_uname']
         passwd = request.form['adminpasswd']
         
-        if uname == 'admin' and passwd == 'adminpass':
-            flash("Login successful!")
-            return render_template('admin/admin-view.html')
-        else:
-            return render_template('admin/login.html')
+        # TODO
+        # validate admin login details against some stored details
+        
         
     return render_template('/admin/admin-view.html') 
+
         
 @app.route('/admin/dashboard')
 def admin_dashboard():
     # Connect to the database and fetch system statistics
-    cur.execute("SELECT COUNT(*) FROM customer")
+    cur.execute("SELECT COUNT(*) FROM user")
     total_customers = cur.fetchone()[0]
     cur.execute("SELECT COUNT(*) FROM car")
     total_cars = cur.fetchone()[0]
@@ -112,7 +126,11 @@ def aboutus():
 
 @app.route('/booking')
 def booking():
-    return render_template('booking.html')
+    if 'email' in session:
+        return render_template('bookingsuccess.html')
+    else:
+        flash('Kindly login to continue with your booking', 'error')
+        return render_template('index.html')
 
 @app.route('/Toyota')
 def toyotapage():
@@ -159,4 +177,4 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()
     app.run(debug=True)
-
+    

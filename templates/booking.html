@@ -1,15 +1,18 @@
-{% extends "base.html" %}
+          
+<div class="pick-details">
+    <h4>Pickup:
+      <input type="date" id="date" required>
+    </h4>
+     <h4>Drop-off:
+        <input type="date" id="date" required>
+    </h4>
+</div>
+     
+<div class="product-details">
+  <h3>Location:Nakuru</h3>
+</div>
 
-{% block title %}Booking success{% endblock %}
-{% block carstyle %}<link rel="stylesheet" href="{{ url_for('static', filename='css/car-page.css') }}">{% endblock %}
-
-{% block content %}
-
-    <section class = "about-section">
-        <div class = "about-bg">
-            <h2>Booking Success</h2>
-            <p class = "text">You have successfully booked this car. Wait for an <strong>email notification</strong> with more details</p>
-        </div>
-    </section>
-
-{% endblock %}
+<div class="product-btn">
+<div class="book-now"><a href="/booking">Book Now</a></div>
+<div class="contact-us"><a href="/contactUs">Contact Us</a></div>
+</div>

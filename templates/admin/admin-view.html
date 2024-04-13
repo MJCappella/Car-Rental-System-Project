@@ -16,8 +16,8 @@
     <div>
         <h2>Manage Customers</h2>
         <ul>
-            {% for customer in customers %}
-            <li>{{ customer.name }} - {{ customer.email }} - <a href="/admin/edit_customer/{{ customer.customer_id }}">Edit</a> | <a href="/admin/delete_customer/{{ customer.customer_id }}">Delete</a></li>
+            {% for user in users %}
+            <li>{{ user.first_name }} - {{ user.email }} - <a href="/admin/edit_customer/{{ user.user_id }}">Edit</a> | <a href="/admin/delete_customer/{{ user.user_id }}">Delete</a></li>
             {% endfor %}
         </ul>
         <a href="/admin/add_customer">Add New Customer</a>

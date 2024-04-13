@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %}Booking Success{% endblock %}
+{% block carstyle %}<link rel="stylesheet" href="{{ url_for('static', filename='css/car-page.css') }}">{% endblock %}
+
+{% block content %}
+
+    <section class = "about-section">
+        <div class = "about-bg">
+            <h2 style="padding-top:100px;">Booking Success</h2>
+            <p class = "text">You have successfully booked this car. Wait for an <strong>email notification</strong> with more details</p>
+        </div>
+    </section>
+
+{% endblock %}

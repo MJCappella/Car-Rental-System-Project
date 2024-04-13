@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}404 Page Not Found{% endblock %}
+{% block carstyle %}<link rel="stylesheet" href="{{ url_for('static', filename='css/car-page.css') }}">{% endblock %}
+
+{% block content %}
+
+    <section class = "about-section">
+        <div class = "about-bg">
+            <h2 style="padding-top:100px;">404, Page not found</h2>
+            <p class = "text">Oops! A problem seems to have occured.</p>
+            <p>The page you have requested does not seem to exist, kindly check the URL and try again.</p>
+        </div>
+    </section>
+
+{% endblock %}
