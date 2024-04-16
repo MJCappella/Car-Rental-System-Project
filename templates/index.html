@@ -1,0 +1,267 @@
+{% extends "base.html" %}
+
+{% block carstyle %}<link rel="stylesheet" href="{{ url_for('static', filename='css/indexpage.css') }}">{% endblock %}
+
+{% block content %}
+
+    <!-- homepage section starts here -->
+      <section class="homepage-box">  
+      <video src="{{ url_for('static', filename='images/mazda/Atenza1.png') }}" autoplay muted loop></video>
+      <h1>HIRE YOUR PERFECT CAR AT THE BEST COST.</h1> 
+      <h3>Experience The Road Like Never Before</h3>
+      <a href="#cont" class="boxBtn">View available cars</a>   
+    </section>
+    <!-- homepage section ends here -->
+
+    <!-- Brand section starts here -->
+    <section class="section brand">
+      <div class="brand-container container">
+        <h2>Available Brands</h2>
+              <div class="brand-images">
+                      <div class="brand-image">
+                            <a href="/Toyota"><img src="{{ url_for('static', filename='images/toyota/toyota.png') }}"  alt="" class="brand-img"></a>
+                      </div>
+                      <div class="brand-image">
+                              <img src="{{ url_for('static', filename='images/mercedes/mercedes.png') }}"  alt="" class="brand-img">
+                      </div>
+                      <div class="brand-image">
+                              <img src="{{ url_for('static', filename='images/mazda/mazda.png') }}"  alt="" class="brand-img">
+                      </div>
+                      <div class="brand-image">
+                              <img src="{{ url_for('static', filename='images/honda/honda.png') }}"  alt="" class="brand-img">
+                      </div>
+                      <div class="brand-image">
+                              <img src="{{ url_for('static', filename='images/nissan/nissan.png') }}"  alt="" class="brand-img">
+                      </div>
+              </div>
+      </div>
+    </section>
+    <!-- brand section ends here -->
+
+    <!-- container section starts here -->
+    <section class="cont" id="cont">
+
+    <div class="card">
+        <div class="card-header">
+            <img src="{{ url_for('static', filename='images/toyota/TX1.jpg') }}"  alt="car" />
+        </div>
+        <div class="card-body">
+              <h4>TOYOTA</h4>
+            <span class="tag tag-red"><a href="/Toyota">View All<i class="fa fa-arrow-right"></i></a></span>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-header">
+            <img src="{{ url_for('static', filename='images/mazda/CX-3-3.jpeg') }}"  alt="car" />
+        </div>
+        <div class="card-body">
+          <h4>MAZDA</h4>
+            <span class="tag tag-red"><a href="/Mazda">View All<i class="fa fa-arrow-right"></i></a></span>
+          </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-header">
+            <img src="{{ url_for('static', filename='images/mercedes/slk1.webp') }}"  alt="car" />
+        </div>
+        <div class="card-body">
+          <h4>MERCEDES BENZ</h4>
+            <span class="tag tag-red"><a href="/Mercedes">View All<i class="fa fa-arrow-right"></i></a></span>
+            </div>
+    </div>
+
+
+    <div class="card">
+      <div class="card-header">
+          <img src="{{ url_for('static', filename='images/nissan/tiida1.png') }}" alt="car" />
+      </div>
+      <div class="card-body">
+        <h4>NISSAN</h4>
+          <span class="tag tag-red"><a href="/Nissan">View All<i class="fa fa-arrow-right"></i></a></span>  
+      </div>
+    </div>
+
+
+    <div class="card">
+    <div class="card-header">
+        <img src="{{ url_for('static', filename='images/honda/veze12.jpg') }}"  alt="car" />
+    </div>
+    <div class="card-body">
+      <h4>HONDA</h4>
+        <span class="tag tag-red"><a href="/Honda">View All<i class="fa fa-arrow-right"></i></a></span>
+          </div>
+    </div>
+
+    </section>
+    <!-- container section ends here -->
+
+
+    <!-- info section starts here -->
+    <section class="info-container">
+      <div class="info-image">
+        <img src="{{ url_for('static', filename='images/mazda/Atenza1.png') }}"  alt="car" />
+        <img src="{{ url_for('static', filename='images/mazda/Axela1.jpeg') }}"  alt="car" />
+      </div>
+      <div class="info-content">
+        <h2 class="section-header">Why Our Car Hire Company...</h2>
+        <div class="info-grid">
+          <div class="info-details">
+            <h4>Wide range of brands</h4>
+            <p>
+              We offer a wide range of brands to meet the diverse needs and preferences of our valued customers.
+                From luxurious to basic, our extensive inventory provides options for every budget and lifestyle.
+            </p>
+          </div>
+          <div class="info-details">
+            <h4>Trusted by thousands</h4>
+            <p>
+              Our commitment to excellence and customer satisfaction has improved our position as a trusted car hire company in the industry.
+            </p>
+          </div>
+          <div class="info-details">
+            <h4>Car service and maintenance</h4>
+            <p>
+              We are dedicated to providing reliable rides to our customers. That's why we ensure proper service on all of our vehicles, 
+              giving you the assurance that you're driving away with a quality vehicle.
+            </p>
+          </div>
+          <div class="info-details">
+            <h4>Financing made easy</h4>
+            <p>
+              Financing your dream ride is made easy with our friendly rates. We ensure you get the best 
+              possible rates and terms, ensuring a smooth and stress-free financing experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- info section ends here -->
+
+
+    <!-- vehicles section starts here -->
+
+    <section id="mazda" class="mazda">
+    <h2>CARS ON OFFER</h2>
+    <div class="product-container">
+
+        <div class="pro">
+            <a href="/Toyota/toyota-auris.html" target="_blank"><img class="producto" src="{{ url_for('static', filename='images/toyota/Auris1.jpg') }}" ></a>
+            <div class="description">
+                <span>SUV</span>
+                <h5>TOYOTA AURIS</h5>
+                <div class="star">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"   >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"   >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                </div>
+                <h4>Ksh.7,000/day</h4>
+            </div>
+            <div class="hire-icon-container"><a href="/Toyota/toyota-auris.html" target="_blank"><img class="hire-icon" src="{{ url_for('static', filename='images/Hire icon.png') }}" ></a></div>
+        </div>
+
+
+        <div class="pro">
+            <a href="/Honda/honda-accord.html" target="_blank"><img class="producto" src="{{ url_for('static', filename='images/honda/accord1.webp') }}"></a>
+            <div class="description">
+                <span>Sedan</span>
+                <h5>HONDA ACCORD TOURER</h5>
+                <div class="star">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                </div>
+                <h4>Ksh.10,000/day</h4>
+            </div>
+            <div class="hire-icon-container"><a href="/Honda/honda-accord.html" target="_blank"><img class="hire-icon" src="{{ url_for('static', filename='images/Hire icon.png') }}" ></a></div>
+        </div>
+
+
+        <div class="pro">
+            <a href="/Mercedes/A-class.html" target="_blank"><img class="producto" src="{{ url_for('static', filename='images/mercedes/aclass1.avif') }}"></a>
+            <div class="description">
+                <span>Saloon car</span>
+                <h5>MERCEDES A CLASS</h5>
+                <div class="star">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                </div>
+                <h4>Ksh.15,000/day</h4>
+            </div>
+            <div class="hire-icon-container"><a href="/Mercedes/A-class.html" target="_blank"><img class="hire-icon" src="{{ url_for('static', filename='images/Hire icon.png') }}" ></a></div>
+        </div>
+
+
+        <div class="pro">
+            <a href="/Nissan/nissan-dualis.html" target="_blank"><img class="producto" src="{{ url_for('static', filename='images/nissan/dualis1.avif') }}"></a>
+            <div class="description">
+                <span>SUV</span>
+                <h5>NISSAN DUALIS</h5>
+                <div class="star">
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                    <img class="star-icon" src="{{ url_for('static', filename='images/star.png') }}"  >
+                </div>
+                <h4>Ksh.20,000/day</h4>
+            </div>
+            <div class="hire-icon-container"><a href="/Nissan/nissan-dualis.html" target="_blank"><img class="hire-icon" src="{{ url_for('static', filename='images/Hire icon.png') }}" ></a></div>
+        </div>
+
+    </div>
+
+    </section>
+
+    <!-- vehicles section ends here -->
+
+
+    <!-- cards section starts here -->
+    <section class="cards">
+      <div class="cards-container">
+          <h2 class="section-header">Our Guarantees</h2>
+        <div class="cards-grid">
+          <div class="cards-card">
+            <span><i class="fa fa-car"></i></span>
+            <h4>Quality and safety</h4>
+            <p>
+              We never compromise on quality and safety of our vehicles.
+              We avoid anything that undermines this core commitment.
+            </p>
+          </div>
+          <div class="cards-card">
+            <span><i class="fa fa-car"></i></span>
+            <h4>Privacy</h4>
+            <p>
+              We repect our customers' documents that come into our possession
+                at the time of transacting and we treat them with utmost confidentiality.
+            </p>
+          </div>
+          <div class="cards-card">
+            <span><i class="fa fa-car"></i></span>
+            <h4>Fairness</h4>
+            <p>
+              We fully understand that we exist as a business to serve you.
+                We therefore remain straightforward in all our undertakings and strive to meet our obligations.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- cards section ends here -->
+
+{% endblock %}
+
+{% block inlinestyles %}
+
+{% endblock %}

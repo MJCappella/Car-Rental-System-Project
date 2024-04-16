@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+
+{% block title %}Toyota Vitz{% endblock %}
+{% block carstyle %}<link rel="stylesheet" href="{{ url_for('static', filename='css/car-page.css') }}">{% endblock %}
+
+{% block content %}
+
+<!-- intro section starts here -->
+<section class = "about-section">
+  <div class = "about-bg">
+    <h2>TOYOTA VITZ</h2>
+    <p class = "text">View More Info About This Car Below.</p>
+  </div>
+<!-- intro section ends here -->
+
+    <div class = "card-wrapper">
+        <div class = "card">
+
+          <!-- left card section starts here -->
+          <div class = "product-imgs">
+            <div class = "img-display">
+              <div class = "img-showcase">
+                <img src = "{{ url_for('static', filename='images/toyota/Vitz1.jpg') }}" alt = "car image">
+                <img src = "{{ url_for('static', filename='images/toyota/Vitz2.jpg') }}" alt = "car image">
+                <img src = "{{ url_for('static', filename='images/toyota/Vitz3.jpg') }}" alt = "car image">
+                <img src = "{{ url_for('static', filename='images/toyota/Vitz4.jpg') }}" alt = "car image">
+              </div>
+            </div>
+            <div class = "img-select">
+              <div class = "img-item">
+                <a href = "#" data-id = "1">
+                  <img src = "{{ url_for('static', filename='images/toyota/Vitz1.jpg') }}" alt = "car image">
+                </a>
+              </div>
+              <div class = "img-item">
+                <a href = "#" data-id = "2">
+                  <img src = "{{ url_for('static', filename='images/toyota/Vitz2.jpg') }}" alt = "car image">
+                </a>
+              </div>
+              <div class = "img-item">
+                <a href = "#" data-id = "3">
+                  <img src = "{{ url_for('static', filename='images/toyota/Vitz3.jpg') }}" alt = "car image">
+                </a>
+              </div>
+              <div class = "img-item">
+                <a href = "#" data-id = "4">
+                  <img src = "{{ url_for('static', filename='images/toyota/Vitz4.jpg') }}" alt = "car image">
+                </a>
+              </div>
+            </div>
+          </div>
+<!-- left card section ends here -->
+
+       
+ <!-- right card section starts here -->
+ <div class = "product-content">
+    <h2 class = "product-title">TOYOTA VITZ</h2>
+      
+     
+    <div class="product-price">
+      <span class="offer-price">Ksh.5,000/day</span>
+  </div>
+    
+  {% include "booking.html" %}
+  
+  </div>
+  </div>
+  </div>
+  <!-- right card section ends here -->
+  
+  
+  <!-- car description section starts here -->
+  <section class="about-car">
+  <h5>Car Description</h5>
+  <p>"Reverse Camera,
+    Push to Start,
+    Alloy Rims,
+    Collision Avoidance System,
+    Hybrid,
+    Lane Assist,
+    Eco Mode."</p>
+  <div class = "product-detail">
+    <h1>Car Specifications</h1>
+     <ul>
+       <li>Make: <span>2017</span></li>
+       <li>Engine: <span>1300 CC</span></li>
+       <li>Mileage: <span>102661 km</span></li>
+       <li>Transmission: <span>Automatic</span></li>
+       <li>Fuel: <span>Diesel</span></li>
+       <li>Drive: <span>4WD</span></li>
+       <li>Body stye: <span>Sedan</span></li>
+     </ul>
+   </div>
+  
+  </section>
+  <!-- car description section ends here -->
+ 
+<script src="{{ url_for('static', filename='js/image-slider.js') }}"></script>
+
+{% endblock %}

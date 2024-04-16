@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Customer</title>
+</head>
+<body>
+    <h1>Edit Customer</h1>
+    <form action="/admin/edit_customer/{{ customer.customer_id }}" method="post">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" value="{{ customer.name }}"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" value="{{ customer.email }}"><br>
+        <label for="phone_number">Phone Number:</label><br>
+        <input type="text" id="phone_number" name="phone_number" value="{{ customer.phone_number }}"><br>
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address">{{ customer.address }}</textarea><br><br>
+        <input type="submit" value="Save Changes">
+    </form>
+</body>
+</html>

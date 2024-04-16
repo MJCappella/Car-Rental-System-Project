@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Customers</title>
+</head>
+<body>
+    <h1>Manage Customers</h1>
+    <ul>
+        {% for customer in customers %}
+        <li>{{ customer.name }} - {{ customer.email }} - {{ customer.phone_number }} - {{ customer.address }} - <a href="/admin/edit_customer/{{ customer.customer_id }}">Edit</a> | <form action="/admin/delete_customer/{{ customer.customer_id }}" method="post"><input type="submit" value="Delete"></form></li>
+        {% endfor %}
+    </ul>
+    <a href="/admin/add_customer">Add New Customer</a>
+</body>
+</html>

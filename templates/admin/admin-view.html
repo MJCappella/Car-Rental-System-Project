@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <h1>Admin Dashboard</h1>
+    <div>
+        <h2>System Statistics</h2>
+        <p>Total Customers: {{ total_customers }}</p>
+        <p>Total Cars: {{ total_cars }}</p>
+        <p>Total Rentals: {{ total_rentals }}</p>
+    </div>
+    <div>
+        <h2>Manage Customers</h2>
+        <ul>
+            {% for user in users %}
+            <li>{{ user.first_name }} - {{ user.email }} - <a href="/admin/edit_customer/{{ user.user_id }}">Edit</a> | <a href="/admin/delete_customer/{{ user.user_id }}">Delete</a></li>
+            {% endfor %}
+        </ul>
+        <a href="/admin/add_customer">Add New Customer</a>
+    </div>
+    <div>
+        <h2>Manage Cars</h2>
+        <ul>
+            {% for car in cars %}
+            <li>{{ car.make }} {{ car.model }} - {{ car.year }} - <a href="/admin/edit_car/{{ car.car_id }}">Edit</a> | <a href="/admin/delete_car/{{ car.car_id }}">Delete</a></li>
+            {% endfor %}
+        </ul>
+        <a href="/admin/add_car">Add New Car</a>
+    </div>
+    <div>
+        <h2>Manage Rentals</h2>
+        <ul>
+            {% for rental in rentals %}
+            <li>Rental ID: {{ rental.rental_id }} - Customer ID: {{ rental.customer_id }} - Car ID: {{ rental.car_id }} - <a href="/admin/edit_rental/{{ rental.rental_id }}">Edit</a> | <a href="/admin/delete_rental/{{ rental.rental_id }}">Delete</a></li>
+            {% endfor %}
+        </ul>
+        <a href="/admin/add_rental">Add New Rental</a>
+    </div>
+</body>
+</html>

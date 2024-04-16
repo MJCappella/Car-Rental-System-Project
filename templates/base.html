@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}CarHire || Homepage{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header-footer.css') }}">
+    {% block carstyle %}{% endblock %}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Carter+One&family=Nunito+Sans:wght@400;700&display=swap"
+    rel="stylesheet">
+</head>
+<body>
+
+<!-- header section starts here, navigation bar -->
+<header>
+
+    <nav class="navbar">
+        <span class="hamburger-btn"><i class="fa fa-bars"></i></span>
+        <a href="/" class="logo">
+            <img src="{{ url_for('static', filename='images/Hire icon.png') }}" alt="logo">
+            <h2>CarHire</h2>
+        </a>
+        <ul class="links">
+            <span class="close-btn"><i class="fa fa-times"></i></span>
+            <li><a href="/">Home</a></li>
+            <li><a href="/aboutUs">About us</a></li>
+            <li><a href="/contactUs">Contact us</a></li>
+        </ul>
+        
+            {% if 'email' in session %}
+                <p>Welcome, <strong>{{ session['email'] }}</strong></p>
+                <a href="/logout">
+                    <button class="logout-btn" href="/logout">Logout</button>
+                </a>
+            {% else %}
+                <button class="login-btn">Login/Signup</button>
+            {% endif %}
+
+        
+    </nav>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="flash-message flash-{{ category }}">
+                        <span class="close-btn"><i class="fa fa-times"></i></span>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+</header>
+
+
+<div class="bg-overlay"></div>
+<div class="form-popup">
+    <span class="close-btn"><i class="fa fa-times"></i></span>
+
+    <div class="form-box login">
+        <!--what follows is a javascript code to validate the login form-->
+        <script language="JavaScript">
+            function validate(form){
+                if(form.email.value === ""){
+                    alert("Please enter your email");
+                    form.email.focus();
+                }
+
+                else if(form.password.value === ""){
+                    alert("please enter your password");
+                    form.password.focus();
+                }
+
+                else
+                {
+                    form.submit();
+                }
+            }
+        </script>
+    
+        <div class="form-content">
+            <h2>LOGIN</h2>
+            <form action="/login" method="post">
+                <div class="input-field">
+                    <input type="email" name="email" required autofocus>
+                    <label>Email</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" name="password" required>
+                    <label>Password</label>
+                </div>
+                <a href="/forgotpass" class="forgot-pass-link">Forgot password?</a>
+                <button type="submit" value="Log In" class="login" onclick="validate(this.form)"> Login </button>
+            </form>
+            <div class="bottom-link">
+                Don't have an account?
+                <a href="index.html" id="signup-link">Signup</a>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="form-box signup">
+        <script>
+            function validate(form) {
+                // Validate username
+                if (form.firstname.value === "") {
+                    alert("Please enter your username");
+                    form.firstname.focus();
+                    return false;
+                }
+                
+                if (!form.firstname.value.match(/^[a-zA-Z]{3,}$/)) {
+                    alert("Username should be at least 3 characters long and contain only letters.");
+                    form.firstname.focus();
+                    return false;
+                }
+                if (form.lastname.value === "") {
+                    alert("Please enter your username");
+                    form.lastname.focus();
+                    return false;
+                }
+                
+                if (!form.lastname.value.match(/^[a-zA-Z]{3,}$/)) {
+                    alert("Username should be at least 3 characters long and contain only letters.");
+                    form.lastname.focus();
+                    return false;
+                }
+                                // Validate email
+                                if (form.email.value === "") {
+                    alert("Please enter your email address");
+                    form.email.focus();
+                    return false;
+                }
+            
+                if (!form.email.value.match(/^\S+@\S+\.\S+$/)) {
+                    alert("Please enter a valid email address.");
+                    form.email.focus();
+                    return false;
+                }
+            
+                // Validate password
+                if (form.password.value === "") {
+                    alert("Please enter your password");
+                    form.password.focus();
+                    return false;
+                }
+                
+                if (!form.password.value.match(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,16}$/)) {
+                    alert("Password must be 8-16 characters long and include at least one uppercase letter, one lowercase letter, one digit, and one special character.");
+                    form.password.focus();
+                    return false;
+                }
+            
+                // Validate confirm password
+                if (form.confirmPassword.value === "") {
+                    alert("Please confirm your password");
+                    form.confirmPassword.focus();
+                    return false;
+                }
+            
+                if (form.password.value !== form.confirmPassword.value) {
+                    alert("Passwords do not match.");
+                    form.confirmPassword.focus();
+                    return false;
+                }        
+                // All validations pass, allow form submission
+                return true;
+            }
+            </script>
+            
+    
+        <form id="form" action="/register" method="post">
+            <h1>REGISTER</h1>
+            <div class="input-control">
+                <label for="firstnamename">First Name</label>
+                <input id="firstname" name="firstname" type="text" required autofocus>
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="lastname">Last Name</label>
+                <input id="lastname" name="lastname" type="text" required>
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" required>
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="password">Password</label>
+                <input id="password"name="password" type="password" required>
+                <div class="error"></div>
+            </div>
+            <div class="input-control">
+                <label for="password2">Confirm Password</label>
+                <input id="password2"name="password2" type="password" required>
+                <div class="error"></div>
+            </div>
+            <button type="submit">Sign Up</button>
+
+            <div class="bottom-link">
+            Already have an account? 
+            <a href="#" id="login-link">Login</a>
+             </div>
+        </form>
+
+        
+    </div>
+    </div>
+    </div>
+</form>
+<!-- header section ends here -->
+
+
+
+{% block content %}{% endblock %}
+
+
+
+<!-- footer section starts here -->
+<footer>
+    <div class="content">
+    <div class="left box">
+        <div class="upper">
+        <div class="topic">About us</div>
+        <p>We deal with car hire services. Get the chance to choose your perfect ride 
+            from our wide variety of car brands and models</p>
+        </div>
+        <div class="lower">
+        <div class="topic">Contact us</div>
+        <div class="phone">
+            <a href="#"><i class="fas fa-phone-volume"></i>+254 1234 5678</a>
+        </div>
+        <div class="email">
+            <a href="mailto:info@carhire.com"><i class="fas fa-envelope"></i>info@carhire.com</a>
+        </div>
+        </div>
+    </div>
+    <div class="middle box">
+        <div class="topic">Quick Links</div>
+        <div><a href="/">Home</a></div>
+        <div><a href="/aboutUs">About Us</a></div>
+        <div><a href="/contactUs">Contact Us</a></div>
+    </div>
+    <div class="right box">
+        <div class="topic">Subscribe To Our Newsletter</div>
+        <form action="#">
+            <input type="text" placeholder="Enter email address" required>
+            <input type="submit" name="" value="Send">
+        </form>
+    </div>
+    </div>
+    <div class="bottom">
+    <p>Copyright © 2024 <a href="/aboutUs">Car Hire</a> All rights reserved</p>
+    </div>
+</footer>
+<!-- footer section ends here -->
+
+{% block inlinestyles %}{% endblock%}
+
+
+<script src="{{ url_for('static', filename='js/navbar.js') }}"></script>
+
+</body>
+</html>
