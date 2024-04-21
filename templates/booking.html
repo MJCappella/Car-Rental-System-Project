@@ -1,18 +1,32 @@
-          
 <div class="pick-details">
-    <h4>Pickup:
-      <input type="date" id="date" required>
-    </h4>
-     <h4>Drop-off:
-        <input type="date" id="date" required>
-    </h4>
+  <h4>Pickup:
+    <input type="date" id="pickup-date" required>
+  </h4>
+   <h4>Drop-off:
+      <input type="date" id="dropoff-date" required>
+  </h4>
 </div>
-     
+
 <div class="product-details">
-  <h3>Location:Nakuru</h3>
+<h3>Location: Nakuru</h3>
 </div>
 
 <div class="product-btn">
-<div class="book-now"><a href="/booking">Book Now</a></div>
-<div class="contact-us"><a href="/contactUs">Contact Us</a></div>
+  <div class="book-now"><a href="/booking" id="book-now-link">Book Now</a></div>
+  <div class="contact-us"><a href="/contactUs">Contact Us</a></div>
 </div>
+
+<script>
+  document.getElementById('book-now-link').addEventListener('click', function(event) {
+      var pickupDate = document.getElementById('pickup-date').value;
+      var dropoffDate = document.getElementById('dropoff-date').value;
+
+      if (pickupDate === "" || dropoffDate === "") {
+          event.preventDefault(); // Prevent default action (following the link) if dates are not filled
+          alert("Please fill in both pickup and drop-off dates.");
+      } else if (pickupDate >= dropoffDate) {
+          event.preventDefault(); // Prevent default action (following the link) if pickup date is after or same as drop-off date
+          alert("Drop-off date must be after pickup date.");
+      }
+  });
+</script>
